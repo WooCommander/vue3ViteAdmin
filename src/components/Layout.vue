@@ -79,9 +79,16 @@
         </div>
         <div class="main">
           <div class="topbar">
-            <div class="toggle"></div>
+            <div class="toggle" @click="toggleMenu"></div>
             <div class="search">
-              <label><input type="text" placeholder="Search here"></label>
+              <label>
+                <input type="text" placeholder="Search here">
+                <i class="fa fa-solid fa-magnifying-glass"></i>
+              </label>
+
+            </div>
+            <div class="user">
+              <img src="../assets/img/user.jpg" alt="">
             </div>
           </div>
 
@@ -99,6 +106,16 @@ components: { baseLayout }
 defineProps({
   msg: String
 })
+
+function toggleMenu() {
+  let toggle = document.querySelector('.toggle');
+  let navigation = document.querySelector('.navigation');
+  let main = document.querySelector('.main');
+
+  toggle.classList.toggle('active')
+  navigation.classList.toggle('active')
+  main.classList.toggle('active')
+}
 
 const count = ref(0)
 </script>
@@ -175,6 +192,81 @@ const count = ref(0)
             }
           }
         }
+      }
+    }
+
+    .navigation.active {
+      width: 60px;
+      transition: .5s;
+    }
+
+    .main.active {
+      width: calc(100% - 60px);
+      left: 60px;
+    }
+
+    .main {
+      position: absolute;
+      width: calc(100% - 300px);
+      left: 300px;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      transition: 0.5s;
+
+      .topbar {
+        width: 100%;
+        background: #fff;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .toggle {
+          position: relative;
+          width: 60px;
+          height: 60px;
+          cursor: pointer;
+
+          &::before {
+            content: '\f0c9';
+            font-family: fontAwesome;
+            position: absolute;
+            width: 60px;
+            height: 100%;
+            line-height: 60px;
+            font-size: 24px;
+            text-align: center;
+            color: #111;
+          }
+        }
+
+        .search {
+          position: relative;
+          width: 400px;
+          margin: 0 10px;
+
+          label {
+            position: relative;
+            width: 100%;
+
+            input {
+              width: 100%;
+              height: 40px;
+              border-radius: 40px;
+              padding: 5px 20px;
+              padding-left: 35px;
+              outline: none;
+              border: 1px solid rgba(0, 0, 0, .2);
+            }
+
+            .fa {
+              position: absolute;
+              left: 15px;
+              top: 3px;
+            }
+          }
+        }
+
       }
     }
   }
