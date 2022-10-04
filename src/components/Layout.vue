@@ -91,7 +91,17 @@
               <img src="../assets/img/user.jpg" alt="">
             </div>
           </div>
-
+          <div class="cardBox">
+            <div class="card">
+              <div>
+                <div class="numbers">1,042</div>
+                <div class="cardName">Daily Views</div>
+              </div>
+              <div class="iconBox">
+                <i class="fa-regular fa-eye"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -216,6 +226,7 @@ const count = ref(0)
       .topbar {
         width: 100%;
         background: #fff;
+        padding: 0 10px;
         height: 60px;
         display: flex;
         justify-content: space-between;
@@ -264,9 +275,29 @@ const count = ref(0)
               left: 15px;
               top: 3px;
             }
+
+
           }
         }
 
+        .user {
+          position: relative;
+          min-width: 50px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+          cursor: pointer;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
       }
     }
   }
