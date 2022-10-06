@@ -5,7 +5,7 @@
         <div class="navigation">
           <ul>
             <li>
-              <a href="http://">
+              <a href="#">
                 <span class="icon"><i class="fa-brands fa-apple"></i>
                 </span>
                 <span class="title">
@@ -13,7 +13,7 @@
                 </span></a>
             </li>
             <li>
-              <a href="http://">
+              <a href="#">
                 <span class="icon"><i class="fa-solid fa-house-user"></i>
 
                 </span>
@@ -23,7 +23,7 @@
               </a>
             </li>
             <li>
-              <a href="http://">
+              <a href="#">
                 <span class="icon"><i class="fa-solid fa-users"></i>
 
                 </span>
@@ -34,7 +34,7 @@
 
             </li>
             <li>
-              <a href="http://">
+              <a href="#">
                 <span class="icon"><i class="fa-regular fa-message"></i>
                 </span>
                 <span class="title">
@@ -44,7 +44,7 @@
 
             </li>
             <li>
-              <a href="http://">
+              <a href="#">
                 <span class="icon"><i class="fa-sharp fa-solid fa-circle-info"></i>
 
                 </span>
@@ -55,7 +55,7 @@
 
             </li>
             <li>
-              <a href="http://">
+              <a href="#">
                 <span class="icon"><i class="fa-solid fa-gear"></i>
 
                 </span>
@@ -65,7 +65,7 @@
               </a>
             </li>
             <li>
-              <a href="http://">
+              <a href="#">
                 <span class="icon">
                   <i class="fa-solid fa-right-from-bracket"> </i>
 
@@ -173,7 +173,7 @@
                     <td>start</td>
                     <td>$300</td>
                     <td>Paid</td>
-                    <td><span class="status inprogress">In progress</span></td>
+                    <td><span class="status pending">In progress</span></td>
                   </tr>
                   <tr>
                     <td>start</td>
@@ -191,7 +191,7 @@
                     <td>start</td>
                     <td>$300</td>
                     <td>Paid</td>
-                    <td><span class="status inprogress">In progress</span></td>
+                    <td><span class="status pending">In progress</span></td>
                   </tr>
                   <tr>
                     <td>start</td>
@@ -225,6 +225,52 @@
                 <h2>Recent Customers</h2>
                 <a href="#" class="btn">View All</a>
               </div>
+              <table>
+                <thead></thead>
+                <tbody>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img1.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img2.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img3.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img4.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img5.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
             </div>
           </div>
         </div>
@@ -305,7 +351,7 @@ const count = ref(0)
             display: block;
             padding: 0 10px;
             height: 60px;
-            ;
+
             line-height: 60px;
             white-space: nowrap;
           }
@@ -465,10 +511,11 @@ const count = ref(0)
         padding: 20px;
         padding-top: 0;
         grid-template-columns: 2fr 1fr;
+        grid-gap: 20px;
 
         .recentOrders {
           position: relative;
-          display: grid;
+          // display: grid;
           min-height: 530px;
           background: #fff;
           padding: 20px;
@@ -502,7 +549,6 @@ const count = ref(0)
             thead {
               td {
                 font-weight: 600;
-
               }
             }
 
@@ -514,13 +560,102 @@ const count = ref(0)
                   background: #03a9f4;
                   color: #fff;
                 }
+
+                &:last-child {
+                  border-bottom: none;
+                }
               }
+            }
+
+            thead tr td:last-child,
+            tbody tr td:last-child {
+              text-align: right;
+            }
+
+            thead tr td:nth-child(2),
+            tbody tr td:nth-child(2) {
+              text-align: right;
+              padding-right: 20px;
+            }
+
+            thead tr td:nth-child(2),
+            tbody tr td:nth-child(2) {
+              text-align: right;
+              padding-right: 20px;
+            }
+
+            thead tr td:nth-child(3),
+            tbody tr td:nth-child(3) {
+              text-align: center;
+
+            }
+          }
+
+          tr {
+            td {
+              padding: 9px 5px;
+            }
+
+          }
+
+          .status {
+            position: relative;
+            padding: 2px 4px;
+            background-color: #f00;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1px;
+
+            &.delivered {
+              background: #8de02c;
+            }
+
+            &.pending {
+              background: #f9ca3f;
+            }
+
+            &.inprogress {
+              background: #1795ce;
+            }
+
+            &.return {
+              background: #f00;
+            }
+          }
+
+        }
+
+        .recentCustomers {
+          position: relative;
+          // display: grid;
+          min-height: 530px;
+          background: #fff;
+          padding: 20px;
+
+          .imgBx {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
             }
           }
         }
-
       }
+
+
     }
+
   }
 }
 </style>
