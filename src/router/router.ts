@@ -6,7 +6,10 @@ import LoginForm from "../components/LoginForm.vue";
 import Layout from "../components/Layout.vue";
 const history = createWebHistory();
 const routes = [
-
+  {
+    path: "",
+    component: Layout
+  },
   {
     path: "/login",
     component: LoginForm
