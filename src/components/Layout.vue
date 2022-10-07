@@ -279,25 +279,28 @@
 </template>
   
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import baseLayout from "../layout/base-layout.vue"
 components: { baseLayout }
-defineProps({
-  msg: String
-})
 
-function toggleMenu() {
+const props = defineProps({
+  name: String,
+  msg: { type: String, default: "Test" }
+})
+const count = ref(0);
+const toggleMenu = () => {
   let toggle = document.querySelector('.toggle');
   let navigation = document.querySelector('.navigation');
   let main = document.querySelector('.main');
 
-  toggle.classList.toggle('active')
-  navigation.classList.toggle('active')
-  main.classList.toggle('active')
+  toggle?.classList.toggle('active');
+  navigation?.classList.toggle('active');
+  main?.classList.toggle('active');
 }
 
-const count = ref(0)
+
+
 </script>
 
 <style lang="less">
@@ -365,7 +368,7 @@ const count = ref(0)
               margin-bottom: 20px;
             }
 
-            :hover {
+            &:hover {
               background: transparent;
 
 
@@ -714,17 +717,16 @@ const count = ref(0)
           left: 300px;
         }
       }
-
-
     }
-
   }
 
   @media (max-width: 480px) {
+    .container .main .cardBox {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
     .container {
-      .cardBox {
-        grid-template-columns: repeat(1, 1fr);
-      }
+
 
       .details .recentOrders table {
         width: 600px;
