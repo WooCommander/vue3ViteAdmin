@@ -226,7 +226,6 @@
                 <a href="#" class="btn">View All</a>
               </div>
               <table>
-                <thead></thead>
                 <tbody>
                   <tr>
                     <td width="60px">
@@ -650,10 +649,107 @@ const count = ref(0)
               object-fit: cover;
             }
           }
+
+          table {
+            border-collapse: collapse;
+
+            tr td:last-child {
+              width: 100%;
+            }
+          }
+
+          table tr:hover,
+          table tr:hover td h4 span {
+            background: #03a9f4;
+            color: #fff;
+          }
+
+          table tr td {
+            padding: 7px 10px;
+
+            h4 span {
+              color: #ccc;
+              font-size: 14px;
+              line-height: 1.2em;
+            }
+          }
         }
       }
 
 
+    }
+
+  }
+
+  @media (max-width: 992px) {
+    .container {
+      .navigation {
+        left: -300px;
+
+        &.active {
+          left: 0;
+          width: 300px;
+        }
+      }
+
+      .main {
+        width: 100%;
+        left: 0;
+
+        .cardBox {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .details {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .cardHeader h2 {
+          font-weight: 600;
+          font-size: 18px;
+        }
+
+        &.active {
+          width: calc(100% - 300px);
+          left: 300px;
+        }
+      }
+
+
+    }
+
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .details .recentOrders table {
+        width: 600px;
+      }
+
+      .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+
+        &.active {
+          width: 100%;
+          left: 0;
+        }
+      }
+
+      .main .topbar {
+        .toggle.active {
+          z-index: 10000;
+
+          &::before {
+            color: #fff;
+          }
+        }
+      }
     }
 
   }
