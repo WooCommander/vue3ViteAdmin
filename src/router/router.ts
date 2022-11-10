@@ -4,6 +4,7 @@ import {
 } from "vue-router";
 import LoginForm from "../components/LoginForm.vue";
 import Layout from "../components/Layout.vue";
+import ServiceSection from "../components/service-section.vue";
 const history = createWebHistory();
 const routes = [
   {
@@ -13,6 +14,10 @@ const routes = [
   {
     path: "/login",
     component: LoginForm
+  },
+  {
+    path: "/service-section",
+    component: ServiceSection
   },
   {
     path: "/layout",
