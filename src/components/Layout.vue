@@ -521,7 +521,7 @@ const toggleMenu = () => {
           min-height: 530px;
           background: #fff;
           padding: 20px;
-
+          color:#111;
           .cardHeader {
             display: flex;
             justify-content: space-between;
@@ -547,7 +547,7 @@ const toggleMenu = () => {
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
-
+            
             thead {
               td {
                 font-weight: 600;
