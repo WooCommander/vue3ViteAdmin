@@ -1,41 +1,41 @@
 <template>
   <div class="service-section">
-    <div class="box" style="--ctrl:#89ec5b;">
-      <div class="content ">
-        <div class="icon"></div>
-        <div class="text">
-          <h3>Developement</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corporis aspernatur dignissimos. Nesciunt nam
-            sint quaerat deserunt! Vitae itaque eligendi voluptatem, maxime, illum aperiam unde necessitatibus neque
-            quos
-            vero nobis!</p>
-          <a href="#">Read More</a>
+    <div class="container">
+      <div class="box" style="--clr:#89ec5b;">
+        <div class="content ">
+          <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="text">
+            <h3>Developement</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              necessitatibus neque
+              quos
+              vero nobis!</p>
+            <a href="#">Read More</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="box" style="--ctrl:#89ec5b;">
-      <div class="content ">
-        <div class="icon"></div>
-        <div class="text">
-          <h3>Developement</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corporis aspernatur dignissimos. Nesciunt nam
-            sint quaerat deserunt! Vitae itaque eligendi voluptatem, maxime, illum aperiam unde necessitatibus neque
-            quos
-            vero nobis!</p>
-          <a href="#">Read More</a>
+      <div class="box" style="--clr:#eb5ae5;">
+        <div class="content ">
+          <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="text">
+            <h3>Developement</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. axime,
+              quos
+              vero nobis!</p>
+            <a href="#">Read More</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="box" style="--ctrl:#89ec5b;">
-      <div class="content ">
-        <div class="icon"></div>
-        <div class="text">
-          <h3>Developement</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corporis aspernatur dignissimos. Nesciunt nam
-            sint quaerat deserunt! Vitae itaque eligendi voluptatem, maxime, illum aperiam unde necessitatibus neque
-            quos
-            vero nobis!</p>
-          <a href="#">Read More</a>
+      <div class="box" style="--clr:#5b98eb;">
+        <div class="content ">
+          <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="text">
+            <h3>Developement</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              quos
+              vero nobis!</p>
+            <a href="#">Read More</a>
+          </div>
         </div>
       </div>
     </div>
@@ -55,7 +55,102 @@ const count = ref(0)
 
 <style lang="less">
 .service-section {
-  margin: 10px;
+  // margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    pad: 60px 0;
+    gap: 60px;
+
+    .box {
+      position: relative;
+      width: 300px;
+      height: 360px;
+      background: #2e2e2e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+        width: 100%;
+        height: 100%;
+        gap: 20px;
+        overflow: hidden;
+
+        .icon {
+          color: var(--clr);
+          width: 80px;
+          height: 80px;
+          box-shadow: 0 0 0 4px #2e2e2e, 0 0 0 6px var(--clr);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2em;
+          background-color: #2e2e2e;
+          transition: 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .container .box:hover .content .icon {
+    box-shadow: 0 0 0 4px #2e2e2e, 0 0 0 300px var(--clr);
+    background-color: var(--clr);
+    color: #2e2e2e;
+  }
+
+  .container .box .content .text p {
+    // height: 75px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #777;
+    transition: 0.5s ease-in-out;
+  }
+
+  .container .box:hover .content .text p {
+    color: #2e2e2e;
+  }
+
+  .container .box .content .text h3 {
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.5s ease-in-out;
+  }
+
+  .container .box:hover .content .text h3 {
+    color: #2e2e2e;
+  }
+
+  .container .box .content .text a {
+    position: relative;
+    color: #2e2e2e;
+    background-color: var(--clr);
+    padding: 8px 15px;
+    display: inline-block;
+  }
+
+  .container .box:hover .content .text a {
+    background-color: #2e2e2e;
+    color: var(--clr);
+  }
 }
 </style>
   
