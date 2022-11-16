@@ -79,6 +79,7 @@ const count = ref(0)
       justify-content: center;
       align-items: center;
 
+
       .content {
         position: relative;
         display: flex;
@@ -145,11 +146,47 @@ const count = ref(0)
     background-color: var(--clr);
     padding: 8px 15px;
     display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: 0.5s ease-in-out;
   }
 
   .container .box:hover .content .text a {
     background-color: #2e2e2e;
     color: var(--clr);
+  }
+
+  .container .box::before {
+    content: "";
+    position: absolute;
+    inset: -10px 50px;
+    border-top: 4px solid var(--clr);
+    border-bottom: 4px solid var(--clr);
+    z-index: -1;
+    transform: skewY(15deg);
+    transition: 0.5s ease-in-out;
+  }
+
+  .container .box:hover::before {
+    transform: skewY(0deg);
+    inset: -10px 40px;
+  }
+
+  .container .box::after {
+    content: "";
+    position: absolute;
+    inset: 60px 10px;
+    border-left: 4px solid var(--clr);
+    border-right: 4px solid var(--clr);
+    z-index: -1;
+    transform: skew(15deg);
+    transition: 0.5s ease-in-out;
+  }
+
+  .container .box:hover::after {
+    transform: skew(0deg);
+    inset: 40px -10px;
   }
 }
 </style>
