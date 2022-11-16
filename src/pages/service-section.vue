@@ -39,6 +39,17 @@
         </div>
       </div>
     </div>
+    <div class="container c1">
+      <div class="percent" data-text="JS" style="--num:70">
+        <div class="dot"></div>
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70"></circle>
+
+        </svg>
+      </div>
+
+    </div>
   </div>
 </template>
   
@@ -59,6 +70,7 @@ const count = ref(0)
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: 100vh;
 
   .container {
@@ -187,6 +199,55 @@ const count = ref(0)
   .container .box:hover::after {
     transform: skew(0deg);
     inset: 40px -10px;
+  }
+
+  .c1 {
+    margin-top: 50px;
+
+    .percent {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+
+    .percent::before {
+      content: attr(data-text);
+      position: absolute;
+      inset: 20px;
+      background-color: #555;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1.5em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+
+    }
+
+    .percent svg {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      transform: rotate(270deg);
+
+      circle {
+        width: 100%;
+        height: 100%;
+        fill: transparent;
+        stroke-width: 3;
+        stroke: rgba(0, 0, 0, .05);
+        transform: translate(5px, 5px);
+      }
+
+      circle:nth-child(2) {
+        stroke: #555;
+        stroke-dasharray: 440;
+        stroke-dashoffset: calc(440-(440*var(--num))/100);
+
+      }
+    }
   }
 }
 </style>
