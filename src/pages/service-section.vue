@@ -243,8 +243,8 @@ const count = ref(0)
 
       circle:nth-child(2) {
         stroke: #555;
-        stroke-dasharray: 440;
-        stroke-dashoffset: calc(440-(440*var(--num))/100);
+        stroke-dasharray: 440px;
+        stroke-dashoffset: calc(440px - (440px * var(--num)) /100);
 
       }
     }
