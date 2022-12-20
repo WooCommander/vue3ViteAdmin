@@ -3,7 +3,7 @@ import {
   createRouter
 } from "vue-router";
 import LoginForm from "../components/LoginForm.vue";
-import Layout from "../components/Layout.vue";
+import Layout from "../layout/Layout.vue";
 import ServiceSection from "../pages/service-section.vue";
 const history = createWebHistory();
 const routes = [
