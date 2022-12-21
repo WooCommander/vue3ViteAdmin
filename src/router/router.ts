@@ -5,6 +5,9 @@ import {
 import LoginForm from "../components/LoginForm.vue";
 import Layout from "../layout/Layout.vue";
 import ServiceSection from "../pages/service-section.vue";
+import Customers from "../pages/customers.vue";
+import Products from "../pages/products.vue";
+import Markets from "../pages/markets.vue";
 const history = createWebHistory();
 const routes = [
   {
@@ -22,6 +25,19 @@ const routes = [
   {
     path: "/layout",
     component: Layout
+
+  },
+  {
+    path: "/customers",
+    component: Customers
+  },
+  {
+    path: "/markets",
+    component: Markets
+  },
+  {
+    path: "/products",
+    component: Products
   },
 ];
 const router = createRouter({

@@ -2,12 +2,12 @@
   <div class="uc-menu">
     <ul>
       <li>
-        <a href="#">
+        <router-link to="/">
           <span class="icon"><i class="fa-brands fa-apple"></i>
           </span>
           <span class="title">
             <h2>TirScript</h2>
-          </span></a>
+          </span></router-link>
       </li>
       <li>
         <a href="#">
@@ -20,24 +20,33 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <router-link to="/customers">
           <span class="icon"><i class="fa-solid fa-users"></i>
-
           </span>
           <span class="title">
-            Customers
+            Пользователи
           </span>
-        </a>
+        </router-link>
 
       </li>
       <li>
-        <a href="#">
+        <router-link to="/products">
           <span class="icon"><i class="fa-regular fa-message"></i>
           </span>
           <span class="title">
-            Message
+            Товары
           </span>
-        </a>
+        </router-link>
+
+      </li>
+      <li>
+        <router-link to="/markets">
+          <span class="icon"><i class="fa-regular fa-message"></i>
+          </span>
+          <span class="title">
+            Магазины
+          </span>
+        </router-link>
 
       </li>
       <li>
