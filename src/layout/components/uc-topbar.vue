@@ -10,7 +10,7 @@
 
     </div>
     <div class="user">
-      <img src="../assets/img/user.jpg" alt="">
+      <img src="../../assets/img/user.jpg" alt="">
     </div>
   </div>
 </template>

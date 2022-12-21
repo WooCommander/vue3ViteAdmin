@@ -5,44 +5,12 @@
         <uc-menu></uc-menu>
         <div class="main">
           <uc-topbar @toggleMenu="toggleMenu"></uc-topbar>
-          <div class="cardBox">
-            <div class="card">
-              <div>
-                <div class="numbers">1,042</div>
-                <div class="cardName">Daily Views</div>
-              </div>
-              <div class="iconBox">
-                <i class="fa-regular fa-eye"></i>
-              </div>
-            </div>
-            <div class="card">
-              <div>
-                <div class="numbers">80</div>
-                <div class="cardName">Sales</div>
-              </div>
-              <div class="iconBox">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-            <div class="card">
-              <div>
-                <div class="numbers">208</div>
-                <div class="cardName">Comments</div>
-              </div>
-              <div class="iconBox">
-                <i class="fa-solid fa-comment"></i>
-              </div>
-            </div>
-            <div class="card">
-              <div>
-                <div class="numbers">6,042</div>
-                <div class="cardName">Earning</div>
-              </div>
-              <div class="iconBox">
-                <i class="fa-solid fa-dollar-sign"></i>
-              </div>
-            </div>
-          </div>
+          <uc-cardBox>
+            <uc-card name="Test12" :numbers="1222" iconClass="fa-regular fa-eye" />
+            <uc-card name="Sales" :numbers="80" iconClass="fa-solid fa-cart-shopping" />
+            <uc-card name="Comments" :numbers="208" iconClass="fa-solid fa-comment" />
+            <uc-card name="Earning" :numbers="6042" iconClass="fa-solid fa-dollar-sign" />
+          </uc-cardBox>
           <div class="details">
             <div class="recentOrders">
               <div class="cardHeader">
@@ -198,7 +166,9 @@ import { ref } from 'vue'
 import baseLayout from "./base-layout.vue"
 import ucMenu from "./components/uc-menu.vue"
 import ucTopbar from "./components/uc-topbar.vue"
-components: [baseLayout, ucMenu, ucTopbar];
+import ucCardBox from "./components/uc-cardbox.vue"
+import ucCard from "./components/uc-card.vue"
+components: [baseLayout, ucMenu, ucTopbar, ucCardBox, ucCard];
 
 const props = defineProps({
   name: String,
@@ -207,7 +177,7 @@ const props = defineProps({
 const count = ref(0);
 const toggleMenu = () => {
   let toggle = document.querySelector('.toggle');
-  let navigation = document.querySelector('.navigation');
+  let navigation = document.querySelector('.uc-menu');
   let main = document.querySelector('.main');
 
   toggle?.classList.toggle('active');
@@ -225,9 +195,6 @@ const toggleMenu = () => {
     position: relative;
     width: 100%;
 
-
-
-
     .main {
       position: absolute;
       width: calc(100% - 300px);
@@ -237,39 +204,11 @@ const toggleMenu = () => {
       transition: 0.5s;
 
 
-
-      .cardBox {
-        position: relative;
-        width: 100%;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 20px;
-
-        .card {
-          position: relative;
-          background-color: #fff;
-          padding: 20px;
-          display: flex;
-          justify-content: space-between;
-          cursor: pointer;
-
-          .numbers {
-            position: relative;
-            font-size: 2em;
-            font-weight: 500;
-
-          }
-
-          .cardName {
-            color: #999;
-          }
-
-          .iconBox {
-            color: #03a9f4;
-          }
-        }
+      &.active {
+        width: calc(100% - 60px);
+        left: 60px;
       }
+
 
       .details {
         position: relative;
@@ -448,57 +387,21 @@ const toggleMenu = () => {
 
     }
 
+
   }
 
-  @media (max-width: 992px) {
-    .container {
-      .navigation {
-        left: -300px;
-
-        &.active {
-          left: 0;
-          width: 300px;
-        }
-      }
-
-      .main {
-        width: 100%;
-        left: 0;
-
-        .cardBox {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .details {
-          grid-template-columns: repeat(1, 1fr);
-        }
-
-        .cardHeader h2 {
-          font-weight: 600;
-          font-size: 18px;
-        }
-
-        &.active {
-          width: calc(100% - 300px);
-          left: 300px;
-        }
-      }
-    }
-  }
 
   @media (max-width: 480px) {
-    .container .main .cardBox {
+    .container .main .uc-cardBox {
       grid-template-columns: repeat(1, 1fr);
     }
 
     .container {
-
-
       .details .recentOrders table {
         width: 600px;
       }
 
-      .navigation {
+      .uc-menu {
         width: 100%;
         left: -100%;
         z-index: 1000;
@@ -520,6 +423,44 @@ const toggleMenu = () => {
       }
     }
 
+  }
+}
+
+@media (max-width: 992px) {
+  .layout {
+    .container {
+      .uc-menu {
+        left: -300px;
+
+        &.active {
+          left: 0;
+          width: 300px;
+        }
+      }
+
+      .main {
+        width: 100%;
+        left: 0;
+
+        .uc-cardBox {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .details {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .cardHeader h2 {
+          font-weight: 600;
+          font-size: 18px;
+        }
+
+        &.active {
+          width: calc(100% - 300px);
+          left: 300px;
+        }
+      }
+    }
   }
 }
 </style>

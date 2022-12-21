@@ -1,6 +1,6 @@
 <template>
-  <div class="uc-cardbox">
-
+  <div class="uc-cardBox">
+    <slot></slot>
   </div>
 </template>
   
@@ -16,6 +16,14 @@ const count = ref(0)
 </script>
 
 <style lang="less">
-.uc-cardbox {}
+.uc-cardBox {
+
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
 </style>
   
