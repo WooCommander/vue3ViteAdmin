@@ -5,14 +5,154 @@
         <uc-menu></uc-menu>
         <div class="main">
           <uc-topbar @toggleMenu="toggleMenu"></uc-topbar>
-          <!-- <uc-cardBox>
+          <uc-cardBox>
             <uc-card name="Test12" :numbers="1222" iconClass="fa-regular fa-eye" />
             <uc-card name="Sales" :numbers="80" iconClass="fa-solid fa-cart-shopping" />
             <uc-card name="Comments" :numbers="208" iconClass="fa-solid fa-comment" />
             <uc-card name="Earning" :numbers="6042" iconClass="fa-solid fa-dollar-sign" />
-          </uc-cardBox> -->
-          <div style="margin:20px">
-            <slot></slot>
+          </uc-cardBox>
+          <div class="details">
+            <div class="recentOrders">
+              <div class="cardHeader">
+                <h2>Recent Orders</h2>
+                <a href="#" class="btn">View All</a>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Payments</td>
+                    <td>Status</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>start</td>
+                    <td>$1200</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$1200</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$600</td>
+                    <td>Paid</td>
+                    <td><span class="status">Returned</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">In progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status pending">In progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">In progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">In progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status pending">In progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">In progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">In progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">In progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>start</td>
+                    <td>$300</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">In progress</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="recentCustomers">
+              <div class="cardHeader">
+                <h2>Recent Customers</h2>
+                <a href="#" class="btn">View All</a>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img1.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img2.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img3.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img4.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div class="imgBx"><img src="../assets/img/img5.jpg" alt=""></div>
+                    </td>
+                    <td>
+                      <h4>David<br><span>Italy</span></h4>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
           </div>
         </div>
       </div>

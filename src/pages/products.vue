@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import baseLayout from "../layout/base-layout.vue"
-import Layout from "../layout/Layout.vue"
+import Layout from "../layout/layout.vue"
 
 components: [baseLayout, Layout];
 
