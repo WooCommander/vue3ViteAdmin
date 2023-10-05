@@ -5,7 +5,13 @@
     <router-view />
   </div>
 </template>
-<script setup>
+<script setup leng="ts">
+// import { onMounted, vue } from "vue"
+
+// onMounted(() => {
+
+
+// })
 
 
 </script>
